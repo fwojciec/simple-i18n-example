@@ -15,7 +15,7 @@ This is a simple example of a multilingual site implemented in [Next.js](https:/
 
 # Demo
 
-Working site can be viewed [here](https://simple-i18n.fwojciec.now.sh/en).
+Working site can be viewed [here](https://simple-i18n-example.fwojciec.now.sh).
 
 # Blog post
 
