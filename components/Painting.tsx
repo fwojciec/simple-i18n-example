@@ -1,12 +1,12 @@
 import React from 'react'
-import { I18nContext } from '../context/I18nContext'
+import useTranslation from '../hooks/useTranslation'
 
 const Painting: React.FC = () => {
-  const { translate } = React.useContext(I18nContext)
+  const { t } = useTranslation()
   return (
     <div>
-      <h1>{translate('notAPipe')}</h1>
-      <img src="/static/img/not_a_pipe.jpg" alt={translate('notAPipe')} />
+      <h1>{t('notAPipe')}</h1>
+      <img src="/static/img/not_a_pipe.jpg" alt={t('notAPipe')} />
     </div>
   )
 }

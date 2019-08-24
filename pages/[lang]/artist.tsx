@@ -1,12 +1,12 @@
 import React from 'react'
-import { I18nContext } from '../../context/I18nContext'
+import useTranslation from '../../hooks/useTranslation'
 import Layout from '../../components/Layout'
 import Artist from '../../components/Artist'
 
 const ArtistPage: React.FC = () => {
-  const { translate } = React.useContext(I18nContext)
+  const { t } = useTranslation()
   return (
-    <Layout title={`${translate('about')} René Magritte`}>
+    <Layout title={`${t('about')} René Magritte`}>
       <Artist />
     </Layout>
   )

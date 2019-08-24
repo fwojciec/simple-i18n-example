@@ -1,12 +1,12 @@
 import React from 'react'
-import { I18nContext } from '../../context/I18nContext'
+import useTranslation from '../../hooks/useTranslation'
 import Painting from '../../components/Painting'
 import Layout from '../../components/Layout'
 
 const IndexPage: React.FC = () => {
-  const { translate } = React.useContext(I18nContext)
+  const { t } = useTranslation()
   return (
-    <Layout title={translate('notAPipe')}>
+    <Layout title={t('notAPipe')}>
       <Painting />
     </Layout>
   )

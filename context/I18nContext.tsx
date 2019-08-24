@@ -1,5 +1,4 @@
 import React from 'react'
-import strings from '../translations/strings'
 import { Locale, isLocale } from '../translations/types'
 import { useRouter } from 'next/dist/client/router'
 
@@ -10,13 +9,11 @@ import { useRouter } from 'next/dist/client/router'
 interface ContextProps {
   readonly locale: Locale
   readonly setLocale: (locale: Locale) => void
-  readonly translate: (value: string) => string
 }
 
 export const I18nContext = React.createContext<ContextProps>({
   locale: 'en',
-  setLocale: () => null,
-  translate: () => ''
+  setLocale: () => null
 })
 
 /**
@@ -39,11 +36,5 @@ export const I18nProvider: React.FC<{ lang: Locale }> = ({ lang, children }) => 
     }
   }, [query.lang, locale])
 
-  function translate(value: string) {
-    return strings[locale][value] || 'Translation not found'
-  }
-
-  return (
-    <I18nContext.Provider value={{ locale, setLocale, translate }}>{children}</I18nContext.Provider>
-  )
+  return <I18nContext.Provider value={{ locale, setLocale }}>{children}</I18nContext.Provider>
 }

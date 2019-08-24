@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import { I18nContext } from '../context/I18nContext'
+import useTranslation from '../hooks/useTranslation'
 import LocaleSwitcher from './LocaleSwitcher'
 
 const Navigation = () => {
-  const { locale, translate } = React.useContext(I18nContext)
+  const { locale, t } = useTranslation()
   return (
     <ul className="root">
       <li>
@@ -12,12 +12,12 @@ const Navigation = () => {
       </li>
       <li>
         <Link href="/[lang]" as={`/${locale}`}>
-          <a>{translate('painting')}</a>
+          <a>{t('painting')}</a>
         </Link>
       </li>
       <li>
         <Link href="/[lang]/artist" as={`/${locale}/artist`}>
-          <a>{translate('artist')}</a>
+          <a>{t('artist')}</a>
         </Link>
       </li>
       <style jsx>{`
