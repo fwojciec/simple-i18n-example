@@ -8,12 +8,12 @@ export function getInitialLocale(): Locale {
     return localSetting
   }
 
-  // if that doesn't work, try setting  based on the browser language setting
+  // if that doesn't work, try setting based on the browser language setting
   const browserSetting = navigator.language.split('-')[0]
   if (isLocale(browserSetting)) {
     return browserSetting
   }
 
-  // return the
+  // return the default otherwise
   return defaultLocale
 }
