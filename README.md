@@ -19,4 +19,4 @@ Working site can be viewed [here](https://simple-i18n.fwojciec.now.sh/en).
 
 # Blog post
 
-This is a companion repo to a [blogpost on my blog](https:/w11i.me/simple-i18n-in-next-js).
+This is a companion repo to a blog post which can be found [here](https://w11i.me/simple-i18n-in-next-js).
