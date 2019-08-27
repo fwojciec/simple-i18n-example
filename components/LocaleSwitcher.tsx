@@ -1,11 +1,11 @@
 import React from 'react'
-import { withRouter } from 'next/dist/client/router'
-import { WithRouterProps } from 'next/dist/client/with-router'
+import { useRouter } from 'next/dist/client/router'
 import { locales, languageNames } from '../translations/config'
-import { I18nContext } from '../context/I18nContext'
+import { LocaleContext } from '../context/LocaleContext'
 
-const LocaleSwitcher: React.FC<WithRouterProps> = ({ router }) => {
-  const { locale } = React.useContext(I18nContext)
+const LocaleSwitcher: React.FC = () => {
+  const { locale } = React.useContext(LocaleContext)
+  const router = useRouter()
   const regex = new RegExp(`^/(${locales.join('|')})`)
   return (
     <select
@@ -23,4 +23,4 @@ const LocaleSwitcher: React.FC<WithRouterProps> = ({ router }) => {
   )
 }
 
-export default withRouter(LocaleSwitcher)
+export default LocaleSwitcher

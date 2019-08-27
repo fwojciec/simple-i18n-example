@@ -13,6 +13,12 @@ const Layout: React.FC<Props> = ({ title, children }) => {
         <title>{title}</title>
       </Head>
       <Navigation />
+      <style jsx global>{`
+        * {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+            Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+      `}</style>
       <div>{children}</div>
     </>
   )

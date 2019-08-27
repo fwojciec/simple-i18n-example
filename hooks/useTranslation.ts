@@ -1,10 +1,10 @@
 import { useContext } from 'react'
-import { I18nContext } from '../context/I18nContext'
+import { LocaleContext } from '../context/LocaleContext'
 import strings from '../translations/strings'
 import { defaultLocale } from '../translations/config'
 
 export default function useTranslation() {
-  const { locale } = useContext(I18nContext)
+  const { locale } = useContext(LocaleContext)
 
   function t(value: string) {
     if (!strings[locale][value]) {

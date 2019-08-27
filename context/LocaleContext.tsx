@@ -3,7 +3,7 @@ import { Locale, isLocale } from '../translations/types'
 import { useRouter } from 'next/dist/client/router'
 
 /**
- * I18nContext
+ * LocaleContext
  */
 
 interface ContextProps {
@@ -11,7 +11,7 @@ interface ContextProps {
   readonly setLocale: (locale: Locale) => void
 }
 
-export const I18nContext = React.createContext<ContextProps>({
+export const LocaleContext = React.createContext<ContextProps>({
   locale: 'en',
   setLocale: () => null
 })
@@ -20,7 +20,7 @@ export const I18nContext = React.createContext<ContextProps>({
  * I18n Context: Provider
  */
 
-export const I18nProvider: React.FC<{ lang: Locale }> = ({ lang, children }) => {
+export const LocaleProvider: React.FC<{ lang: Locale }> = ({ lang, children }) => {
   const [locale, setLocale] = React.useState(lang)
   const { query } = useRouter()
 
@@ -36,5 +36,5 @@ export const I18nProvider: React.FC<{ lang: Locale }> = ({ lang, children }) => 
     }
   }, [query.lang, locale])
 
-  return <I18nContext.Provider value={{ locale, setLocale }}>{children}</I18nContext.Provider>
+  return <LocaleContext.Provider value={{ locale, setLocale }}>{children}</LocaleContext.Provider>
 }

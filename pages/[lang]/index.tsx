@@ -2,6 +2,7 @@ import React from 'react'
 import useTranslation from '../../hooks/useTranslation'
 import Painting from '../../components/Painting'
 import Layout from '../../components/Layout'
+import withLocale from '../../hocs/withLocale'
 
 const IndexPage: React.FC = () => {
   const { t } = useTranslation()
@@ -12,4 +13,4 @@ const IndexPage: React.FC = () => {
   )
 }
 
-export default IndexPage
+export default withLocale(IndexPage)
