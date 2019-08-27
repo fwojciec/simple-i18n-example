@@ -7,6 +7,3 @@ export const languageNames = {
   fr: 'français',
   pl: 'polski'
 }
-
-// list of paths where language detection should be skipped
-export const languageAgnosticPaths = ['/', '/favicon.ico']
