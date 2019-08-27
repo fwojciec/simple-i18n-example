@@ -26,6 +26,7 @@ export default (WrappedPage: NextPage<any>) => {
     if (WrappedPage.getInitialProps) {
       pageProps = await WrappedPage.getInitialProps(ctx)
     }
+    console.log(ctx)
     if (typeof ctx.query.lang !== 'string' || !isLocale(ctx.query.lang)) {
       return { ...pageProps }
     }
