@@ -6,14 +6,17 @@ import { LocaleContext } from '../context/LocaleContext'
 const LocaleSwitcher: React.FC = () => {
   const { locale } = React.useContext(LocaleContext)
   const router = useRouter()
-  const regex = new RegExp(`^/(${locales.join('|')})`)
+
+  const handleLocaleChange = React.useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const regex = new RegExp(`^/(${locales.join('|')})`)
+      router.push(router.pathname, router.asPath.replace(regex, `/${e.target.value}`))
+    },
+    [router]
+  )
+
   return (
-    <select
-      value={locale}
-      onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-        router.push(router.pathname, router.asPath.replace(regex, `/${e.target.value}`))
-      }
-    >
+    <select value={locale} onChange={handleLocaleChange}>
       {locales.map(locale => (
         <option key={locale} value={locale}>
           {languageNames[locale]}

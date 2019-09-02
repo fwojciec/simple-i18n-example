@@ -10,7 +10,7 @@ interface LangProps {
 }
 
 export default (WrappedPage: NextPage<any>) => {
-  const WithLocale: NextPage<LangProps> = ({ locale, ...pageProps }) => {
+  const WithLocale: NextPage<any, LangProps> = ({ locale, ...pageProps }) => {
     if (!locale) {
       return <Error statusCode={404} />
     }
@@ -26,9 +26,8 @@ export default (WrappedPage: NextPage<any>) => {
     if (WrappedPage.getInitialProps) {
       pageProps = await WrappedPage.getInitialProps(ctx)
     }
-    console.log(ctx)
     if (typeof ctx.query.lang !== 'string' || !isLocale(ctx.query.lang)) {
-      return { ...pageProps }
+      return { ...pageProps, locale: undefined }
     }
     return { ...pageProps, locale: ctx.query.lang }
   }

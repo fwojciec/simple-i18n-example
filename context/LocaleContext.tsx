@@ -1,10 +1,6 @@
 import React from 'react'
-import { Locale, isLocale } from '../translations/types'
 import { useRouter } from 'next/dist/client/router'
-
-/**
- * LocaleContext
- */
+import { Locale, isLocale } from '../translations/types'
 
 interface ContextProps {
   readonly locale: Locale
@@ -15,10 +11,6 @@ export const LocaleContext = React.createContext<ContextProps>({
   locale: 'en',
   setLocale: () => null
 })
-
-/**
- * I18n Context: Provider
- */
 
 export const LocaleProvider: React.FC<{ lang: Locale }> = ({ lang, children }) => {
   const [locale, setLocale] = React.useState(lang)
