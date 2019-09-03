@@ -6,11 +6,11 @@ import { defaultLocale } from '../translations/config'
 export default function useTranslation() {
   const { locale } = useContext(LocaleContext)
 
-  function t(value: string) {
-    if (!strings[locale][value]) {
-      console.warn(`Translation '${value}' for locale '${locale}' not found.`)
+  function t(key: string) {
+    if (!strings[locale][key]) {
+      console.warn(`Translation '${key}' for locale '${locale}' not found.`)
     }
-    return strings[locale][value] || strings[defaultLocale][value] || ''
+    return strings[locale][key] || strings[defaultLocale][key] || ''
   }
 
   return {
