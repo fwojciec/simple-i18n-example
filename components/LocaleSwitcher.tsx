@@ -4,8 +4,8 @@ import { locales, languageNames } from '../translations/config'
 import { LocaleContext } from '../context/LocaleContext'
 
 const LocaleSwitcher: React.FC = () => {
-  const { locale } = React.useContext(LocaleContext)
   const router = useRouter()
+  const { locale } = React.useContext(LocaleContext)
 
   const handleLocaleChange = React.useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
