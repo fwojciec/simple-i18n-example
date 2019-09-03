@@ -1,16 +1,18 @@
 import React from 'react'
 import Head from 'next/head'
+import useTranslation from '../hooks/useTranslation'
 import Navigation from './Navigation'
 
 interface Props {
-  title: string
+  titleKey: string
 }
 
-const Layout: React.FC<Props> = ({ title, children }) => {
+const Layout: React.FC<Props> = ({ titleKey, children }) => {
+  const { t } = useTranslation()
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{t(titleKey)}</title>
       </Head>
       <Navigation />
       <style jsx global>{`
@@ -19,7 +21,7 @@ const Layout: React.FC<Props> = ({ title, children }) => {
             Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
       `}</style>
-      <div>{children}</div>
+      <>{children}</>
     </>
   )
 }

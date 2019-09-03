@@ -8,7 +8,7 @@ const Artist: React.FC = () => {
       <h1>René Magritte</h1>
       <img src="/static/img/magritte.jpg" alt="Rene Magritte" />
       <p>{t('bio')}</p>
-      <a href={`http://${locale}.wikipedia.org/wiki/René_Magritte`}>Read more on Wikipedia...</a>
+      <a href={`http://${locale}.wikipedia.org/wiki/René_Magritte`}>{t('readMore')}</a>
     </div>
   )
 }
