@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRouter } from 'next/dist/client/router'
+import { useRouter } from 'next/router'
 import { locales, languageNames } from '../translations/config'
 import { LocaleContext } from '../context/LocaleContext'
 
