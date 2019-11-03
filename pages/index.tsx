@@ -1,12 +1,10 @@
 import React from 'react'
 import Head from 'next/head'
 import { getInitialLocale } from '../translations/getInitialLocale'
-import { useRouter } from 'next/router'
 
 const Index: React.FC = () => {
-  const router = useRouter()
   React.useEffect(() => {
-    router.replace('/[lang]', `/${getInitialLocale()}`)
+		window.location.replace(`/${getInitialLocale()}`)
   })
   return (
     <Head>
