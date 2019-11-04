@@ -19,4 +19,4 @@ Working site can be viewed [here](https://simple-i18n-example.fwojciec.now.sh).
 
 # Blog post
 
-This is a companion repo to a blog post which can be found [here](https://w11i.me/simple-i18n-in-next-js).
+This is a companion repo to a blog post which can be found [here](https://w11i.me/how-to-build-multilingual-website-in-next-js).
