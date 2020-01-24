@@ -11,4 +11,4 @@ const IndexPage: React.FC = () => {
   )
 }
 
-export default withAPILocale(IndexPage)
+export default withAPILocale('common')(IndexPage)
