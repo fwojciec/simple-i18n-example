@@ -12,7 +12,8 @@ export default (req: NextApiRequest, res: NextApiResponse<Translations>) => {
         // const strings: any = locales[lang][namespace]
         const locale: any = locales[lang];
         const strings: any = locale[namespace];
-        console.log('strings: ', strings)
+        console.log('namespace: ', namespace)
+        //console.log('strings: ', strings)
         res.status(200).json(strings)
     }
 }

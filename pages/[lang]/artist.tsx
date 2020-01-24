@@ -11,4 +11,4 @@ const ArtistPage: React.FC = () => {
   )
 }
 
-export default withAPILocale('common')(ArtistPage)
+export default withAPILocale('artist')(ArtistPage)
