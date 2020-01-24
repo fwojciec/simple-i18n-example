@@ -16,7 +16,7 @@ const LocaleSwitcher: React.FC = () => {
   )
 
   return (
-    <select value={locale} onChange={handleLocaleChange}>
+    <select value={locale.lang} onChange={handleLocaleChange}>
       {locales.map(locale => (
         <option key={locale} value={locale}>
           {languageNames[locale]}
