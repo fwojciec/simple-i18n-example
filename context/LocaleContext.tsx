@@ -1,7 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import { Locale, Translations, isLocale } from '../translations/types'
-// import strings from '../translations/strings.old'
 import strings from '../translations/locales/en'
 interface LocaleProps {
   lang: Locale
