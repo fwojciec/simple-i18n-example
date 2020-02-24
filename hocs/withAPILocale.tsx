@@ -11,7 +11,7 @@ interface LangProps {
   translations?: { [key: string]: string }
 }
 
-export default (WrappedPage: NextPage<any>) => {
+export default (namespace: string) => (WrappedPage: NextPage<any>) => {
   const WithLocale: NextPage<any, LangProps> = ({ locale, translations, ...pageProps }) => {
     if (!locale) {
       return <Error statusCode={404} />
@@ -20,7 +20,7 @@ export default (WrappedPage: NextPage<any>) => {
       return <Error statusCode={500} />
     }
     return (
-      <LocaleProvider lang={locale} translations={translations}>
+      <LocaleProvider lang={locale} translations={translations} namespace={namespace}>
         <WrappedPage {...pageProps} />
       </LocaleProvider>
     )
@@ -35,7 +35,7 @@ export default (WrappedPage: NextPage<any>) => {
       return { ...pageProps }
     }
     const url = process.env.NODE_ENV === 'production' ? 'https://simple-i18n-example.fwojciec.now.sh' : 'http://localhost:3000'
-    const translations = await fetch(`${url}/api/${ctx.query.lang}`).then(data => data.json())
+    const translations = await fetch(`${url}/api/${ctx.query.lang}?namespace=${namespace}`).then(data => data.json())
     return { ...pageProps, locale: ctx.query.lang, translations }
   }
 

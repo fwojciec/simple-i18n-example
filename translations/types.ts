@@ -10,6 +10,10 @@ export type Strings = {
   [key in Locale]: Translations
 }
 
+export interface Namespace {
+  namespace: string
+}
+
 export function isLocale(tested: string): tested is Locale {
   return locales.some(locale => locale === tested)
 }
